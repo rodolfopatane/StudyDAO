@@ -78,7 +78,7 @@ contract ProposalsVoting is Ownable {
         emit Vote(msg.sender, _proposal);
     }
 
-    function getPoposalVotes() public view returns (Proposal[] memory) {
+    function getProposalVotes() public view returns (Proposal[] memory) {
         Proposal[] memory listProposals = new Proposal[](proposals.length);
         for (uint256 i = 0; i < proposals.length; i++) {
             listProposals[i] = Proposal(proposals[i], votes[i]);

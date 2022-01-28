@@ -1,5 +1,5 @@
 // add
-
+const infuraAPIKey = '';
 const contractAdress = '0xFd545F40f6f924437EBb2eD95293d8AC18C8e51a';
 const provider = `wss://rinkeby.infura.io/ws/v3/${infuraAPIKey}`;
 
@@ -11,7 +11,7 @@ const autorizeProposeButton = document.getElementById('autorizeProposeButton');
 
 // display results/errors
 const selectedAccountDisplay = document.getElementById('selectedAccountDisplay');
-const sendPoposalResultDisplay = document.getElementById('sendPoposalResultDisplay');
+const sendProposalResultDisplay = document.getElementById('sendProposalResultDisplay');
 const autorizeProposeDisplay = document.getElementById('listProposalsDiv');
 const listProposalsDiv = document.getElementById('autorizeProposeDisplay');
 
@@ -127,9 +127,9 @@ const includeProposal = async () => {
                 method: 'eth_sendTransaction',
                 params: [txObject]
             });
-            sendPoposalResultDisplay.innerHTML = `${txHash}`;
+            sendProposalResultDisplay.innerHTML = `${txHash}`;
         } catch (error) {
-            sendPoposalResultDisplay.innerHTML = error.message;
+            sendProposalResultDisplay.innerHTML = error.message;
         }
     }
 
@@ -165,7 +165,7 @@ const autorizePropose = async () => {
 const getProposalVotes = async () => {
     if (await checkConnectedWallet()) {
         try {
-            const proposalVotes = await contract.methods.getPoposalVotes().call();
+            const proposalVotes = await contract.methods.getProposalVotes().call();
             proposalVotes.forEach(proposal => {
                 const p = document.createElement(`p`);
                 p.innerHTML = `<p class="mb-0">${proposal}</p>`;
