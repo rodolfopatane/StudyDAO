@@ -1,7 +1,7 @@
 // MESSAGES
 const NOT_CONECTED = 'Connect your wallet first';
 // add
-const infuraAPIKey = '';
+const infuraAPIKey = '26b131bf678f4c85b3420c71a74b449b';
 const contractAdress = '0x0E2aABA6E3210EA3F07dC75446778CAE55DA3Eed';
 const provider = `wss://rinkeby.infura.io/ws/v3/${infuraAPIKey}`;
 
